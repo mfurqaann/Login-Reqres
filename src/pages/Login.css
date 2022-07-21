@@ -1,0 +1,69 @@
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/bg.jpg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  width: 30rem;
+  padding: 3rem 0;
+  height: auto;
+  border-radius: 30px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(13, 57, 156);
+  background: linear-gradient(14deg, rgb(13, 57, 156) 19%, rgb(19, 158, 149) 73%);
+}
+@media only screen and (max-width: 768px) {
+  .login {
+    /* For mobile phones: */
+    width: 100%;
+  }
+}
+.login__header {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-image: url("../assets/user.jfif");
+  background-size: cover;
+}
+.login__title {
+  margin-top: 2rem;
+  text-align: center;
+}
+.login__title p {
+  font-size: 2rem;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  flex: 1rem;
+  padding: 0 3rem;
+  width: 30rem;
+}
+.login form .forgot-pass {
+  align-self: center;
+}
+.login form .forgot-pass a {
+  color: #fff;
+  text-decoration: none;
+}
+.login form .forgot-pass a:hover {
+  color: grey;
+}
+@media only screen and (max-width: 768px) {
+  .login form {
+    /* For mobile phones: */
+    width: 100%;
+  }
+}/*# sourceMappingURL=Login.css.map */
