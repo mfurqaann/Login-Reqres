@@ -1,10 +1,4 @@
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../assets/bg.jpg");
-}
-
-.container {
+.container-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +28,7 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-image: url("../assets/user.jfif");
+  background-image: url("../../assets/user.jfif");
   background-size: cover;
 }
 .login__title {

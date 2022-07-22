@@ -1,0 +1,60 @@
+.container-listuser h1 {
+  text-align: center;
+}
+.container-listuser .list {
+  width: 90%;
+  padding: 5rem 5rem 0 5rem;
+  margin: 0 auto;
+  gap: 2rem;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .container-listuser .list {
+    /* For mobile phones: */
+    padding: 5rem 0;
+  }
+}
+.container-listuser .card {
+  width: 400px;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 2rem 0;
+}
+.container-listuser .card__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.container-listuser .card__email {
+  text-transform: capitalize;
+}
+.container-listuser .card__header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.container-listuser .buttonNext {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+.container-listuser .buttonNext button {
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  color: #ffffff;
+  border: none;
+  background: rgb(13, 57, 156);
+  background: linear-gradient(14deg, rgb(13, 57, 156) 19%, rgb(19, 158, 149) 73%);
+}
+.container-listuser .buttonNext button:hover {
+  background: linear-gradient(14deg, rgb(19, 81, 224) 19%, rgb(9, 53, 50) 73%);
+}/*# sourceMappingURL=ListUser.css.map */

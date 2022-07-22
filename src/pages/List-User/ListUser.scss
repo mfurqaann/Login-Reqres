@@ -1,0 +1,79 @@
+.container-listuser {
+   & h1 {
+      text-align: center;
+   }
+
+   .list {
+      width: 90%;
+      padding: 5rem 5rem 0 5rem;
+      margin: 0 auto;
+      gap: 2rem;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+
+      position: relative;
+
+      @media only screen and (max-width: 768px) {
+         /* For mobile phones: */
+         padding: 5rem 0;
+      }
+   }
+
+   .card {
+      width: 400px;
+      border-radius: 30px;
+      cursor: pointer;
+      padding: 2rem 0;
+
+      &__item {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         align-items: center;
+      }
+
+      &__email {
+         text-transform: capitalize;
+      }
+
+      &__header img {
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+      }
+   }
+
+   .buttonNext {
+      display: flex;
+      gap: 2rem;
+      padding: 3rem 0;
+
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      button {
+         width: 150px;
+         height: 50px;
+         border-radius: 30px;
+         color: #ffffff;
+         border: none;
+
+         background: rgb(13, 57, 156);
+         background: linear-gradient(
+            14deg,
+            rgba(13, 57, 156, 1) 19%,
+            rgba(19, 158, 149, 1) 73%
+         );
+
+         &:hover {
+            background: linear-gradient(
+               14deg,
+               rgb(19, 81, 224) 19%,
+               rgb(9, 53, 50) 73%
+            );
+         }
+      }
+   }
+}
