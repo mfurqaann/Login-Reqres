@@ -16,4 +16,7 @@ Pada halaman awal menampilkan fitur login untuk dapat melihat "list user"
  - Kolom email dan password tidak boleh kosong.
  - Kolom emakil : Harus berisikan input dengan memiliki attribute '@' didalamnya.
  - Kolom password : Harus berisikan input dengan minimal 6 huruf.
+
+##
+
 Setelah login, terdapat tampilan "list user", lalu klik salah satu "user" untuk melihat "detail user".
