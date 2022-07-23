@@ -4,13 +4,18 @@ import './ListUser.css'
 import { Container } from 'react-bootstrap'
 import Card from '../../components/Card/Card'
 
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const ListUser = () => {
-   let navigate = useNavigate;
+   let navigate = useNavigate();
+   let location = useLocation();
+   let isLogin = location.state;
    const [page, setPage] = useState(1)
    const [isLoading, setIsLoading] = useState(false)
    const [userList, setUserList] = useState([])
+
+
+
    const getData = async () => {
       setIsLoading(true)
       try {
@@ -52,6 +57,11 @@ const ListUser = () => {
    useEffect(() => {
       getData()
    }, [page])
+
+   if (isLogin === null) {
+      navigate('/')
+      return alert('Login dulu ya!')
+   }
 
    return (
       <Container fluid>

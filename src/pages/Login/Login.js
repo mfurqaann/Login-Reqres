@@ -7,10 +7,9 @@ import './Login.css'
 
 const Login = () => {
    let navigate = useNavigate()
-
+   let isLogin = 1;
    const [inputEmail, setInputEmail] = useState('')
    const [inputPassword, setInputPassword] = useState('')
-
    const emailHandler = (e) => {
       setInputEmail(e.target.value)
    }
@@ -32,8 +31,7 @@ const Login = () => {
 
       setInputEmail('')
       setInputPassword('')
-
-      navigate('/users')
+      navigate('/users', { state: isLogin })
    }
 
    return (
