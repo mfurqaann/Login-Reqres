@@ -26,10 +26,14 @@ const Login = () => {
          return alert('email dan password tidak boleh kosong')
       }
 
+      if (inputPassword.trim().length <= 6) {
+         return alert('password tidak boleh kurang dari 6 huruf')
+      }
+
       setInputEmail('')
       setInputPassword('')
 
-      navigate('/list-user')
+      navigate('/users')
    }
 
    return (
@@ -45,7 +49,6 @@ const Login = () => {
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
                      type="email"
-                     name="email"
                      value={inputEmail}
                      onChange={emailHandler}
                      placeholder="Enter email"
@@ -56,7 +59,6 @@ const Login = () => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                      type="password"
-                     name="password"
                      value={inputPassword}
                      onChange={passwordHandler}
                      placeholder="Password"

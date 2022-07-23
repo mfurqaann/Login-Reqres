@@ -1,5 +1,6 @@
 .container-listuser h1 {
   text-align: center;
+  font-weight: 700;
 }
 .container-listuser .list {
   width: 90%;
@@ -17,34 +18,13 @@
     padding: 5rem 0;
   }
 }
-.container-listuser .card {
-  width: 400px;
-  border-radius: 30px;
-  cursor: pointer;
-  padding: 2rem 0;
-}
-.container-listuser .card__item {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-.container-listuser .card__email {
-  text-transform: capitalize;
-}
-.container-listuser .card__header img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
 .container-listuser .buttonNext {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  padding: 3rem 0;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0);
+  padding-bottom: 3rem;
+  margin-top: 30px;
 }
 .container-listuser .buttonNext button {
   width: 150px;

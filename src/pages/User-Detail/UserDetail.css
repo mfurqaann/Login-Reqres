@@ -1,0 +1,19 @@
+.userDetail {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .userDetail {
+    /* For mobile phones: */
+    position: relative;
+    right: 0;
+    transform: none;
+  }
+}
+.userDetail__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}/*# sourceMappingURL=UserDetail.css.map */

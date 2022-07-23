@@ -1,0 +1,23 @@
+.card {
+    width: 300px;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 2rem 0;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__email {
+        text-transform: capitalize;
+    }
+
+    &__header img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+}

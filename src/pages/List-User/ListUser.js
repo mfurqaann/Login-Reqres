@@ -2,18 +2,17 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './ListUser.css'
 import { Container } from 'react-bootstrap'
-import logodefault from '../../assets/user.jfif'
+import Card from '../../components/Card/Card'
+
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const ListUser = () => {
+   let navigate = useNavigate;
    const [page, setPage] = useState(1)
    const [isLoading, setIsLoading] = useState(false)
    const [userList, setUserList] = useState([])
-
-   const [isData, setIsData] = useState(false)
-
    const getData = async () => {
       setIsLoading(true)
-      // https://reqres.in/api/users?page=2
       try {
          const response = await axios.get(
             `https://reqres.in/api/users?page=${page}`
@@ -39,23 +38,17 @@ const ListUser = () => {
       setPage((prevVal) => prevVal - 1)
    }
 
+
    let DisplayUser = userList.map((user) => {
       return (
-         <div className="card" key={user.id}>
-            <div className="card__item">
-               <div className="card__header">
-                  <img src={user.avatar} />
-               </div>
-               <div className="card__name">
-                  <h3>
-                     {user.first_name} {user.last_name}
-                  </h3>
-               </div>
-            </div>
-         </div>
+         <Card
+            id={user.id}
+            first_name={user.first_name}
+            last_name={user.last_name}
+            isLoading={isLoading}
+         />
       )
    })
-
    useEffect(() => {
       getData()
    }, [page])
@@ -66,10 +59,17 @@ const ListUser = () => {
             <div>
                <h1>List User</h1>
             </div>
-            <div className="list">{isLoading ? 'Loading...' : DisplayUser}</div>
-            <div className="buttonNext">
-               <button onClick={NextPage}>Next Page</button>
-               <button onClick={PreviousPage}>Previous Page</button>
+            <div >
+               <div className="list">{isLoading ? 'Loading...' : DisplayUser}
+                  <Outlet />
+               </div>
+               {!isLoading ?
+                  <div className="buttonNext">
+                     <button onClick={NextPage}>Next Page</button>
+                     <button onClick={PreviousPage}>Previous Page</button>
+                  </div>
+                  : ''}
+
             </div>
          </div>
       </Container>

@@ -1,0 +1,20 @@
+.card {
+  width: 300px;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 2rem 0;
+}
+.card__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.card__email {
+  text-transform: capitalize;
+}
+.card__header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}/*# sourceMappingURL=Card.css.map */

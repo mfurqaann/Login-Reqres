@@ -1,6 +1,7 @@
 .container-listuser {
    & h1 {
       text-align: center;
+      font-weight: 700;
    }
 
    .list {
@@ -20,39 +21,16 @@
       }
    }
 
-   .card {
-      width: 400px;
-      border-radius: 30px;
-      cursor: pointer;
-      padding: 2rem 0;
 
-      &__item {
-         display: flex;
-         flex-direction: column;
-         gap: 2rem;
-         align-items: center;
-      }
-
-      &__email {
-         text-transform: capitalize;
-      }
-
-      &__header img {
-         width: 200px;
-         height: 200px;
-         border-radius: 50%;
-      }
-   }
 
    .buttonNext {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
-      padding: 3rem 0;
+      padding-bottom: 3rem;
+      margin-top: 30px;
 
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translate(-50%, 0);
       button {
          width: 150px;
          height: 50px;
@@ -61,18 +39,14 @@
          border: none;
 
          background: rgb(13, 57, 156);
-         background: linear-gradient(
-            14deg,
-            rgba(13, 57, 156, 1) 19%,
-            rgba(19, 158, 149, 1) 73%
-         );
+         background: linear-gradient(14deg,
+               rgba(13, 57, 156, 1) 19%,
+               rgba(19, 158, 149, 1) 73%);
 
          &:hover {
-            background: linear-gradient(
-               14deg,
-               rgb(19, 81, 224) 19%,
-               rgb(9, 53, 50) 73%
-            );
+            background: linear-gradient(14deg,
+                  rgb(19, 81, 224) 19%,
+                  rgb(9, 53, 50) 73%);
          }
       }
    }
