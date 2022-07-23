@@ -8,15 +8,18 @@ const UserDetail = () => {
     let location = useLocation();
     let id = location.state
 
+    const [isLoading, setIsLoading] = useState(false);
     const [userDetail, setUserDetail] = useState();
 
     const getDataDetail = async () => {
+        setIsLoading(true)
         try {
             const response = await axios.get(`https://reqres.in/api/users/${id}`)
             setUserDetail(response.data.data)
         } catch (error) {
             console.error(error)
         }
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -26,7 +29,8 @@ const UserDetail = () => {
     return (
         <div className='userDetail'>
             <div className='userDetail__title'>Detail User</div>
-            <Card {...userDetail} />
+            {isLoading ? 'Loading...' : <Card {...userDetail} />}
+
 
         </div>
     )
