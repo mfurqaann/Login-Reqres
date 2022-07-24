@@ -12,11 +12,12 @@ const Card = (props) => {
     }
 
     return (
-        <div className="card" key={props.id} onClick={getDetail} >
-            <div className="card__item">
-                {props.avatar ? <div className="card__header">
-                    <img src={props.avatar} alt="avatar" />
-                </div> : ''}
+        <div className="card" key={props.key} onClick={getDetail} >
+            <div className="card__item" >
+                {props.avatar ?
+                    <div className="card__header">
+                        <img src={props.avatar} alt="avatar" />
+                    </div> : ''}
 
                 <div className="card__name">
                     <h3>

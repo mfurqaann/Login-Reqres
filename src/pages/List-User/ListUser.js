@@ -27,12 +27,14 @@ const ListUser = () => {
             setPage(1)
          }
 
+         console.log(response.status)
+
          const dataUser = await response.data.data
          setUserList(dataUser)
 
          setIsLoading(false)
       } catch (error) {
-         console.log(error)
+         console.log(error.response.status)
       }
    }
 
@@ -46,12 +48,14 @@ const ListUser = () => {
 
    let DisplayUser = userList.map((user) => {
       return (
-         <Card
-            id={user.id}
-            first_name={user.first_name}
-            last_name={user.last_name}
-            isLoading={isLoading}
-         />
+         <div key={user.id}>
+            <Card
+               id={user.id}
+               first_name={user.first_name}
+               last_name={user.last_name}
+               isLoading={isLoading}
+            />
+         </div>
       )
    })
    useEffect(() => {
