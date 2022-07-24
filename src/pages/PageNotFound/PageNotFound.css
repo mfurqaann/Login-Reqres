@@ -1,0 +1,11 @@
+.container-pnf {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.container-pnf h1 {
+  text-transform: uppercase;
+}/*# sourceMappingURL=PageNotFound.css.map */
