@@ -4,10 +4,12 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
+import axios from 'axios'
 
 const Login = () => {
    let navigate = useNavigate()
    let isLogin = 1;
+
    const [inputEmail, setInputEmail] = useState('')
    const [inputPassword, setInputPassword] = useState('')
    const emailHandler = (e) => {
@@ -18,7 +20,27 @@ const Login = () => {
       setInputPassword(e.target.value)
    }
 
-   const submitHandler = (e) => {
+   // let data = {
+   //    email: inputEmail,
+   //    password: inputPassword
+   // }
+
+   const loginUser = (email, password) => {
+      try {
+         return axios.post('https://reqres.in/api/login', {
+            email: email,
+            password: password
+         })
+      } catch (error) {
+         console.error(error)
+      }
+   }
+
+
+
+
+
+   const submitHandler = async (e) => {
       e.preventDefault()
 
       if (inputEmail.trim().length === 0 || inputPassword.trim().length === 0) {
@@ -29,9 +51,10 @@ const Login = () => {
          return alert('password tidak boleh kurang dari 6 huruf')
       }
 
-      setInputEmail('')
-      setInputPassword('')
-      navigate('/users', { state: isLogin })
+      const response = await loginUser(inputEmail, inputPassword)
+      console.log(response)
+      if (response.status === 200) navigate('/users', { state: response.data.token })
+
    }
 
    return (

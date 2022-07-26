@@ -9,7 +9,8 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 const ListUser = () => {
    let navigate = useNavigate();
    let location = useLocation();
-   let isLogin = location.state;
+   let token = location.state;
+   console.log(token)
    const [page, setPage] = useState(1)
    const [isLoading, setIsLoading] = useState(false)
    const [userList, setUserList] = useState([])
@@ -62,7 +63,7 @@ const ListUser = () => {
       getData()
    }, [page])
 
-   if (isLogin === null) {
+   if (token === null) {
       navigate('/')
       return alert('Login dulu ya!')
    }
